@@ -32,10 +32,34 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-        type="text/javascript" charset="utf-8"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-        type="text/javascript" charset="utf-8"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1439154522990699',
+                xfbml: true,
+                version: 'v2.2'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <link rel="stylesheet" type="text/css"
+    href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <script type="text/javascript" charset="UTF-8"
+    src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+  <script type="text/javascript"  charset="UTF-8"
+    src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
 </head>
 
@@ -54,6 +78,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" runat="server" href="~/Default.aspx">CALEM</a>
+                <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="false">
+</div>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -138,7 +168,7 @@
                     </ul>
                 </li>
                 <li id="user" runat="server" class="dropdown" visible="false">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <asp:Literal ID="ltUser" runat="server" /> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -221,10 +251,14 @@
                         </div>
                         <div class="control-group">
                             <br />
-                            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-block btn-success" Text="Sign In" />
-                            <br /><br />
+                            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-block btn-success" Text="Sign In" OnClick="btnLogin_Click" />
+                            <br />
+                                <center>
+                                <em>or</em>
+                                </center>
+                            <br />
                             <asp:LinkButton ID="btnFBLogin" runat="server" CssClass="btn btn-block btn-info">
-                                <i class="fa fa-facebook"> Sign in using Facebook</i>
+                                <i class="fa fa-facebook-square"></i> Sign in using Facebook
                             </asp:LinkButton>
                         </div>
                         </fieldset>
@@ -251,7 +285,7 @@
                         </div>
                         <div class="control-group">
                             <br />
-                            <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-block btn-info" Text="Register" />
+                            <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-block btn-info" Text="Register" OnClick="btnRegister_Click" />
                         </div>
                         </fieldset>
                     </div>
