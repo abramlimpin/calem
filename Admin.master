@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="description" content="Crime Awareness, Locator and Evasion Map">
     <meta name="author" content="Team CALEM">
 
-    <title>CALEM</title>
+    <title>Administration - CALEM</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
@@ -77,9 +77,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" runat="server" href="~/Default.aspx">
-                    Crime Awareness, Locator and Evasion Map
-                </a>
+                <a class="navbar-brand" runat="server" href="~/Default.aspx">CALEM</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -93,9 +91,9 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Philippine National Police</strong>
+                                        <h5 class="media-heading"><strong>John Smith</strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Today at 7:00 PM</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
                                     </div>
                                 </div>
@@ -108,7 +106,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>D.I.L.G.</strong>
+                                        <h5 class="media-heading"><strong>John Smith</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -170,13 +168,7 @@
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a runat="server" href="~/Account/Badges.aspx"><i class="fa fa-fw fa-rebel"></i> View Badges</a>
-                        </li>
-                        <li>
-                            <a runat="server" href="~/Account/Crime/Submit.aspx"><i class="fa fa-fw fa-microphone"></i> Report a Crime</a>
-                        </li>
-                        <li>
-                            <a runat="server" href="~/Account/AFOL.aspx"><i class="fa fa-fw fa-paperclip"></i> Submit AFOL</a>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -188,7 +180,7 @@
                     </ul>
                 </li>
                 <li id="guest" runat="server">
-                    <a href="#" data-toggle="modal" data-target="#userModal"><i class="fa fa-user"></i> Login / Register</a>
+                    <a href="#" data-toggle="modal" data-target="#userModal"><i class="fa fa-user"></i> Welcome, Administrator!</a>
                 </li>
 
             </ul>
@@ -196,110 +188,35 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <img runat="server" src="~/img/ibonb.png" class="img-responsive center-block" width="220" />
-                    </li>
-                    <li class="active">
                         <a href="javascript:;" data-toggle="collapse" data-target="#news"><i class="fa fa-fw fa-arrows-v"></i> News Feed <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="news" class="collapse">
                             <li>
-                                <a runat="server" href="~/Default.aspx">View Map</a>
+                                <a href="#">Dropdown Item</a>
                             </li>
                             <li>
-                                <a runat="server" href="~/report.aspx">View Report</a>
+                                <a href="#">Dropdown Item</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
-                        <a runat="server" href="~/About.aspx"><i class="fa fa-fw fa-info"></i> About CALEM</a>
+                    <li>
+                        <a runat="server" href="~/Reports/"><i class="fa fa-fw fa-bar-chart-o"></i> Reports</a>
                     </li>
-                    <li class="active">
-                        <a runat="server" href="~/Account/Crime/Submit.aspx"><i class="fa fa-fw fa-microphone"></i> Report a Crime</a>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
-                    <li class="active">
-                        <a runat="server" href="~/ContactUs.aspx"><i class="fa fa-fw fa-map-marker"></i> Contact Us</a>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <br>
-                <div class="bs-example bs-example-tabs">
-                    <ul id="myTab" class="nav nav-tabs">
-                        <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
-                        <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
-                        <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
-                    </ul>
-                </div>
-                <div class="modal-body">
-                    <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in" id="why">
-                    <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-                    <p></p><br><p> Please contact <a href="mailto:calemph@gmail.com">calemph@gmail.com</a> for any other inquiries.</p>
-                    </div>
-                    <div class="tab-pane fade active in" id="signin">
-                        <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="userid">Username / Email Address:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtUsername" runat="server" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="userid">Password:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtPassword" runat="server" type="password" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <br />
-                            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-block btn-success" Text="Sign In" OnClick="btnLogin_Click" />
-                            <br />
-                                <center>
-                                <em>or</em>
-                                </center>
-                            <br />
-                            <asp:LinkButton ID="btnFBLogin" runat="server" CssClass="btn btn-block btn-info">
-                                <i class="fa fa-facebook-square"></i> Sign in using Facebook
-                            </asp:LinkButton>
-                        </div>
-                        </fieldset>
-                    </div>
-                    <div class="tab-pane fade" id="signup">
-                        <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="userid">Username:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtS_Username" runat="server" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="userid">Email Address:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtS_Email" runat="server" class="form-control" type="email" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="userid">Password:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtS_Password" runat="server" type="password" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <br />
-                            <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-block btn-info" Text="Register" OnClick="btnRegister_Click" />
-                        </div>
-                        </fieldset>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
+            <div id="page-wrapper">
+        <div class="container-fluid"> 
             <asp:ContentPlaceHolder ID="content" runat="server" />
+            </div>
+            </div>
         <!-- /#page-wrapper -->
         </form>
     </div>
@@ -315,15 +232,6 @@
     <script src='<%= Page.ResolveUrl("~/js/plugins/morris/raphael.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/js/plugins/morris/morris.min.js") %>'></script>
     <script src='<%= Page.ResolveUrl("~/js/plugins/morris/morris-data.js") %>'></script>
-
-
-    <!-- Flot Charts JavaScript -->
-    <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="js/plugins/flot/flot-data.js"></script>
 
 </body>
 

@@ -17,16 +17,18 @@
 
                             <asp:ListView ID="lvBadges" runat="server">
                                 <ItemTemplate>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-2" style='<%#(int)DataBinder.Eval(Container, "DataItemIndex") == 0 ? "" : "opacity: 0.3;"%>'>
+                                        <center>
                                         <div class="thumbnail">
                                             <div>
-                                               <%-- Badge Image --%>
+                                               <img src='../img/badges/<%# Eval("Image") %>' class="img-responsive img-circle" height="300" />
                                             </div>
                                             <div class="caption">
-                                                <%-- Description
-                                                    Date --%>
+                                                <h3 style="height: 80px;"><%# Eval("Rank") %></h3>
+                                                <%#(int)DataBinder.Eval(Container, "DataItemIndex") == 0 ? "December 6, 2014" : "Achievement Locked"%>
                                             </div>
                                         </div>
+                                        </center>
                                     </div>
                                 </ItemTemplate>
                             </asp:ListView>

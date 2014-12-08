@@ -63,7 +63,7 @@ public partial class Site : System.Web.UI.MasterPage
                 Session["level"] = data["UserLevel"].ToString();
             }
             con.Close();
-            Response.Redirect("~/Default2.aspx");
+            Response.Redirect("~/Default.aspx");
         }
         else
         {

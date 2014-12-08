@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AboutUs.aspx.cs" Inherits="AboutUs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" Runat="Server">
 <div id="page-wrapper">
@@ -6,7 +6,10 @@
     <div class="container-fluid">
      <!-- Page Heading -->
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-8">
+            <center>
+            <img src="img/ibonb.png" class="img-responsive" width="200" />
+            </center>
             <h1 class="page-header">
                 About CALEM&nbsp;<small>(Crime Awareness, Locator and Evasion Map)</small>
             </h1>
